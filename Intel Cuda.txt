@@ -1,0 +1,11 @@
+Nice Comparison. I came to know about Intel's oneAPI and it supports Arc. Can you retry the test using that? I used oneAPI (uses oneDNN without cuda or cuDNN) on 3060 gives same result as cuda. It doesnt requires WSL. All you have to do is install minicanda, add intel channel and install tensorflow from intel's channel.
+
+
+conda config --add channels intel # adds intel channel to conda
+conda install -c intel tensorflow # installs intel optimised tensorflow from intel's channel
+
+
+
+
+https://www.intel.com/content/www/us/en/developer/articles/technical/running-tensorflow-stable-diffusion-on-intel-arc.html#gs.7k6zii
+

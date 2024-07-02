@@ -1,0 +1,487 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.19.1211.1636                               -->
+<workbook original-version='18.1' source-build='2019.4.1 (20194.19.1211.1636)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Emp Master+ (Tableau_Dashboard_Sa)' inline='true' name='federated.148j5vm031hu6n10cxfl91ol712c' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Tableau_Dashboard_Sa' name='excel-direct.0tdkd3k0t9l5fe148vnn00m3p3qj'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/aryan/OneDrive/Desktop/Tableau Project/Tableau_Dashboard_Sa.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Sales Data].[Product ID]' />
+              <expression op='[Product Master].[Product ID]' />
+            </expression>
+          </clause>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[Emp Master].[EMP ID]' />
+                <expression op='[Sales Data].[EMP ID]' />
+              </expression>
+            </clause>
+            <relation connection='excel-direct.0tdkd3k0t9l5fe148vnn00m3p3qj' name='Emp Master' table='[&apos;Emp Master$&apos;]' type='table'>
+              <columns gridOrigin='A1:C21:no:A1:C21:0' header='yes' outcome='6'>
+                <column datatype='integer' name='EMP ID' ordinal='0' />
+                <column datatype='string' name='EMP Name' ordinal='1' />
+                <column datatype='string' name='Supervisor' ordinal='2' />
+              </columns>
+            </relation>
+            <relation connection='excel-direct.0tdkd3k0t9l5fe148vnn00m3p3qj' name='Sales Data' table='[&apos;Sales Data$&apos;]' type='table'>
+              <columns gridOrigin='A1:D6491:no:A1:D6491:0' header='yes' outcome='6'>
+                <column datatype='date' name='Date' ordinal='0' />
+                <column datatype='integer' name='EMP ID' ordinal='1' />
+                <column datatype='string' name='Product ID' ordinal='2' />
+                <column datatype='integer' name='Unit Sold' ordinal='3' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='excel-direct.0tdkd3k0t9l5fe148vnn00m3p3qj' name='Product Master' table='[&apos;Product Master$&apos;]' type='table'>
+            <columns gridOrigin='A1:C31:no:A1:C31:0' header='yes' outcome='6'>
+              <column datatype='string' name='Product ID' ordinal='0' />
+              <column datatype='string' name='Product Name' ordinal='1' />
+              <column datatype='integer' name='Price per unit' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Date]' value='[Sales Data].[Date]' />
+          <map key='[EMP ID (Sales Data)]' value='[Sales Data].[EMP ID]' />
+          <map key='[EMP ID]' value='[Emp Master].[EMP ID]' />
+          <map key='[EMP Name]' value='[Emp Master].[EMP Name]' />
+          <map key='[Price per unit]' value='[Product Master].[Price per unit]' />
+          <map key='[Product ID (Product Master)]' value='[Product Master].[Product ID]' />
+          <map key='[Product ID]' value='[Sales Data].[Product ID]' />
+          <map key='[Product Name]' value='[Product Master].[Product Name]' />
+          <map key='[Supervisor]' value='[Emp Master].[Supervisor]' />
+          <map key='[Unit Sold]' value='[Sales Data].[Unit Sold]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>EMP ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EMP ID]</local-name>
+            <parent-name>[Emp Master]</parent-name>
+            <remote-alias>EMP ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EMP Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[EMP Name]</local-name>
+            <parent-name>[Emp Master]</parent-name>
+            <remote-alias>EMP Name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Supervisor</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Supervisor]</local-name>
+            <parent-name>[Emp Master]</parent-name>
+            <remote-alias>Supervisor</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Emp Master]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C21:no:A1:C21:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Sales Data]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EMP ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EMP ID (Sales Data)]</local-name>
+            <parent-name>[Sales Data]</parent-name>
+            <remote-alias>EMP ID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Product ID]</local-name>
+            <parent-name>[Sales Data]</parent-name>
+            <remote-alias>Product ID</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unit Sold</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Unit Sold]</local-name>
+            <parent-name>[Sales Data]</parent-name>
+            <remote-alias>Unit Sold</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Sales Data]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D6491:no:A1:D6491:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Product ID (Product Master)]</local-name>
+            <parent-name>[Product Master]</parent-name>
+            <remote-alias>Product ID</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Product Name]</local-name>
+            <parent-name>[Product Master]</parent-name>
+            <remote-alias>Product Name</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Price per unit</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Price per unit]</local-name>
+            <parent-name>[Product Master]</parent-name>
+            <remote-alias>Price per unit</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Product Master]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C31:no:A1:C31:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Max Profit' datatype='integer' name='[Calculation_464433738340712448]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Unit Sold]*[Price per unit]' />
+      </column>
+      <column datatype='integer' hidden='true' name='[EMP ID (Sales Data)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[EMP ID]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[EMP Name]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' hidden='true' name='[Product ID]' role='dimension' type='nominal' />
+      <column-instance column='[EMP Name]' derivation='None' name='[none:EMP Name:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.60396' measure-ordering='alphabetic' measure-percentage='0.39604' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:EMP Name:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;EMP-9&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;EMP-1&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;EMP-5&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;EMP-13&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;EMP-10&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;EMP-6&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;EMP-19&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;EMP-2&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;EMP-17&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;EMP-7&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;EMP-14&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;EMP-15&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;EMP-18&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;EMP-20&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;EMP-11&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;EMP-8&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;EMP-3&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;EMP-16&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;EMP-12&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;EMP-4&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Emp Master+ (Tableau_Dashboard_Sa)' name='federated.148j5vm031hu6n10cxfl91ol712c' />
+          </datasources>
+          <datasource-dependencies datasource='federated.148j5vm031hu6n10cxfl91ol712c'>
+            <column caption='Max Profit' datatype='integer' name='[Calculation_464433738340712448]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Unit Sold]*[Price per unit]' />
+            </column>
+            <column datatype='string' name='[EMP Name]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Price per unit]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Unit Sold]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_464433738340712448]' derivation='Max' name='[max:Calculation_464433738340712448:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[EMP Name]' derivation='None' name='[none:EMP Name:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.148j5vm031hu6n10cxfl91ol712c].[none:EMP Name:nk]'>
+            <groupfilter count='1' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='COUNT([Calculation_464433738340712448])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:EMP Name:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.148j5vm031hu6n10cxfl91ol712c].[none:EMP Name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.148j5vm031hu6n10cxfl91ol712c].[none:EMP Name:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.148j5vm031hu6n10cxfl91ol712c].[max:Calculation_464433738340712448:qk]</rows>
+        <cols>[federated.148j5vm031hu6n10cxfl91ol712c].[none:EMP Name:nk]</cols>
+      </table>
+      <simple-id uuid='{F69B7A58-E47B-4150-AFED-753A91CEFB71}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.148j5vm031hu6n10cxfl91ol712c].[none:EMP Name:nk]' type='filter' />
+            <card pane-specification-id='2' param='[federated.148j5vm031hu6n10cxfl91ol712c].[none:EMP Name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight field='[federated.148j5vm031hu6n10cxfl91ol712c].[none:EMP Name:nk]'>
+          <bucket-selection />
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{A49902D4-FFF3-478C-BC26-56BA49A38953}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='123'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
